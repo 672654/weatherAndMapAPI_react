@@ -20,6 +20,7 @@ Dette er en React-applikasjon som viser værdata og kart-funksjonalitet. Appen l
 
 - Node.js installert på maskinen
 - npm eller yarn
+- API-nøkkel fra [OpenWeatherMap](https://openweathermap.org/api) (gratis registrering)
 
 ### Installasjon og kjøring
 
