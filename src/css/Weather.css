@@ -1,7 +1,7 @@
 .form-input{
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 20px 20px 10px 20px; /* Reduser bottom padding */
   gap: 10px;
   
 }
@@ -31,4 +31,9 @@
 .loading{
   display: flex;
   justify-content: center;
+}
+
+/* Reduser mellomrom mellom form og WeatherCard */
+.form-input + div {
+  margin-top: -10px; /* Negativ margin trekker det oppover */
 }

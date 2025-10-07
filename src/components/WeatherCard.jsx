@@ -8,11 +8,17 @@ function WeatherCard({ location, data }) {
   }
 
   const [weather, setWeather] = useState("");
+  const [windStyle, setWindStyle] = useState("wind-low");
+
   const mainWeather = data.weather[0].main;
+  const windSpeed = data.wind.speed;
 
   useEffect(() => {
     setWeather(mainWeather);
-  }, [mainWeather]);
+    if (windSpeed > 6) {
+      setWindStyle("wind-high");
+    }
+  }, [mainWeather, windSpeed]);
 
   const tempCelsius = Math.round(data.main.temp - 273.15);
 
@@ -47,7 +53,7 @@ function WeatherCard({ location, data }) {
             </p>
             <p>Temp: {tempCelsius}C</p>
           </div>
-          <div>
+          <div className={windStyle}>
             <h3>Wind</h3>
             <p>Speed: {data.wind.speed} m/s</p>
             <p>

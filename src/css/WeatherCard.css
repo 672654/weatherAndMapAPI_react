@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
-  padding: 10px;
+  margin: 1px;
+  padding: 1px;
 }
 
 .flex {
@@ -44,6 +44,25 @@
   position: relative;
   background-size: cover;
   background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  width: 100%;
+}
+
+.wind-low {
+  background-image: url("/low_wind.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  width: 100%;
+}
+.wind-high {
+  background-image: url("/high-wind.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: top;
   background-repeat: no-repeat;
   background-attachment: local;
   width: 100%;

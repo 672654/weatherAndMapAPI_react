@@ -1,16 +1,43 @@
-# React + Vite
+# Weather & Map API React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Intro
 
-Currently, two official plugins are available:
+Dette er en React-applikasjon som viser værdata og kart-funksjonalitet. Appen lar brukere søke etter været i forskjellige lokasjoner og vise dem på et interaktivt kart.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Rammeverk og biblioteker
 
-## React Compiler
+- **React** - Frontend-rammeverk
+- **Vite** - Bygge- og utviklingsverktøy
+- **React Router** - Navigasjon mellom sider
+- **Leaflet** - Interaktive kart
+- **React Leaflet** - React-komponenter for Leaflet
+- **Weather API** - Værdata
+- **Geocoding API** - Lokasjonssøk
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Hvordan kjøre prosjektet
 
-## Expanding the ESLint configuration
+### Forutsetninger
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js installert på maskinen
+- npm eller yarn
+
+### Installasjon og kjøring
+
+1. Klon repositoryet:
+
+   ```bash
+   git clone https://github.com/672654/weatherAndMapAPI_react.git
+   cd weatherAndMapAPI_react
+   ```
+
+2. Installer avhengigheter:
+
+   ```bash
+   npm install
+   ```
+
+3. Start utviklingsserveren:
+
+   ```bash
+   npm run dev
+   ```

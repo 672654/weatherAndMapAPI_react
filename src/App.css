@@ -5,13 +5,14 @@ html, body, #root {
   padding: 0;
 }
 
+
 .app {
-  background-image: url('/background.jpg');
-  background-size:auto;
+  background-image: url('/background_3.jpg');
+  background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100%;
   min-height: 100vh;
 }
-
+  
