@@ -1,6 +1,7 @@
 # Weather & Map API React App
 
-<img width="1917" height="878" alt="image" src="https://github.com/user-attachments/assets/ae80bf77-5e78-49d2-a77a-c15ce8081c77" />
+<img width="1915" height="877" alt="image" src="https://github.com/user-attachments/assets/44781fd7-81a2-4560-a543-b2a1db0c41bb" />
+
 
 
 ## Intro
