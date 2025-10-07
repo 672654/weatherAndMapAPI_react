@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "../css/WeatherCard.css";
 import MapComponent from "./Map";
 
@@ -13,11 +13,53 @@ function WeatherCard({ location, data }) {
   const mainWeather = data.weather[0].main;
   const windSpeed = data.wind.speed;
 
+  // Beregn sunrise og sunset tider - useMemo for å unngå unødvendige beregninger
+  const { sunriseTime, sunsetTime, localTimeData } = useMemo(() => {
+    // Konverter sunrise og sunset til lokal tid
+    const sunriseLocalStamp = data.sys.sunrise + data.timezone;
+    const sunsetLocalStamp = data.sys.sunset + data.timezone;
+
+    const sunriseDate = new Date(sunriseLocalStamp * 1000);
+    const sunsetDate = new Date(sunsetLocalStamp * 1000);
+
+    const sunrise = `${sunriseDate
+      .getUTCHours()
+      .toString()
+      .padStart(2, "0")}:${sunriseDate
+      .getUTCMinutes()
+      .toString()
+      .padStart(2, "0")}`;
+
+    const sunset = `${sunsetDate
+      .getUTCHours()
+      .toString()
+      .padStart(2, "0")}:${sunsetDate
+      .getUTCMinutes()
+      .toString()
+      .padStart(2, "0")}`;
+
+    // Beregn lokal tid
+    const localTimeStamp = data.dt + data.timezone;
+    const localDate = new Date(localTimeStamp * 1000);
+
+    const hours = localDate.getUTCHours().toString().padStart(2, "0");
+    const minutes = localDate.getUTCMinutes().toString().padStart(2, "0");
+    const day = localDate.getUTCDate().toString().padStart(2, "0");
+    const month = (localDate.getUTCMonth() + 1).toString().padStart(2, "0");
+    const year = localDate.getUTCFullYear();
+
+    const localTime = `${hours}:${minutes} ${day}.${month}.${year}`;
+
+    return {
+      sunriseTime: sunrise,
+      sunsetTime: sunset,
+      localTimeData: localTime,
+    };
+  }, [data.sys.sunrise, data.sys.sunset, data.timezone, data.dt]);
+
   useEffect(() => {
     setWeather(mainWeather);
-    if (windSpeed > 6) {
-      setWindStyle("wind-high");
-    }
+    setWindStyle(windSpeed > 6 ? "wind-high" : "wind-low");
   }, [mainWeather, windSpeed]);
 
   const tempCelsius = Math.round(data.main.temp - 273.15);
@@ -60,10 +102,11 @@ function WeatherCard({ location, data }) {
               Direction: {windDirection} ({degree}°)
             </p>
           </div>
-          <div>
-            <h3>Data</h3>
-            <p>Data</p>
-            <p>Data</p>
+          <div className="sunset">
+            <h3>Time</h3>
+            <p>Local Time: {localTimeData}</p>
+            <p>Sunrise: {sunriseTime}</p>
+            <p>Sunset: {sunsetTime}</p>
           </div>
         </div>
       </div>

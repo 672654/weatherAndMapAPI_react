@@ -67,3 +67,13 @@
   background-attachment: local;
   width: 100%;
 }
+
+.sunset {
+   background-image: url("/sunset.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  width: 100%;
+}
