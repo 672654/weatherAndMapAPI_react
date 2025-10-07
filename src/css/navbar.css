@@ -1,0 +1,19 @@
+.nav{
+  display: flex;
+  position: sticky;
+  
+  padding: 20px;
+  gap: 20px;
+
+  background-color: white;
+  color: white;
+  
+}
+
+.nav a{
+  font-size: 25px;
+  color: rgb(73, 124, 134);
+  &:hover{
+    color: rgba(32, 31, 31, 0.842);
+  }
+}
