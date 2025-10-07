@@ -1,5 +1,8 @@
 # Weather & Map API React App
 
+<img width="1917" height="878" alt="image" src="https://github.com/user-attachments/assets/ae80bf77-5e78-49d2-a77a-c15ce8081c77" />
+
+
 ## Intro
 
 Dette er en React-applikasjon som viser værdata og kart-funksjonalitet. Appen lar brukere søke etter været i forskjellige lokasjoner og vise dem på et interaktivt kart.
